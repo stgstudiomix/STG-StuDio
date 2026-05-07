@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>STG Studio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'IBM Plex Sans', sans-serif;
+      background:#050505;
+      color:#fff;
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:'';
+      position:fixed;
+      width:600px;
+      height:600px;
+      background:radial-gradient(circle, rgba(120,0,255,.18) 0%, rgba(0,0,0,0) 70%);
+      top:-200px;
+      right:-200px;
+      z-index:-1;
+    }
+
+    body::after{
+      content:'';
+      position:fixed;
+      width:500px;
+      height:500px;
+      background:radial-gradient(circle, rgba(0,170,255,.12) 0%, rgba(0,0,0,0) 70%);
+      bottom:-200px;
+      left:-200px;
+      z-index:-1;
+    }
+
+    .container{
+      width:100%;
+      max-width:1200px;
+      margin:auto;
+      padding:40px 20px 80px;
+    }
+
+    .logo{
+      display:flex;
+      justify-content:center;
+      margin-bottom:50px;
+    }
+
+    .logo img{
+      width:180px;
+      object-fit:contain;
+    }
+
+    .top-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+      margin-bottom:50px;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:24px;
+      padding:32px;
+      backdrop-filter:blur(12px);
+      transition:.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-4px);
+      border-color:rgba(140,90,255,.5);
+    }
+
+    h1{
+      font-size:32px;
+      font-weight:600;
+      margin-bottom:18px;
+      letter-spacing:-1px;
+    }
+
+    h2{
+      font-size:24px;
+      margin-bottom:16px;
+      font-weight:500;
+    }
+
+    p{
+      color:#b9b9b9;
+      line-height:1.7;
+      margin-bottom:24px;
+      font-size:15px;
+    }
+
+    form{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+
+    input,
+    textarea{
+      width:100%;
+      background:#0f0f0f;
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:14px;
+      padding:16px;
+      color:#fff;
+      font-family:'IBM Plex Sans', sans-serif;
+      outline:none;
+      transition:.3s;
+    }
+
+    input:focus,
+    textarea:focus{
+      border-color:#7e57c2;
+    }
+
+    textarea{
+      min-height:120px;
+      resize:none;
+    }
+
+    button,
+    .button{
+      background:linear-gradient(135deg,#7e57c2,#4b2cff);
+      color:#fff;
+      border:none;
+      padding:16px 22px;
+      border-radius:14px;
+      font-size:15px;
+      font-weight:500;
+      cursor:pointer;
+      transition:.3s;
+      text-decoration:none;
+      display:inline-flex;
+      justify-content:center;
+      align-items:center;
+      width:100%;
+    }
+
+    button:hover,
+    .button:hover{
+      opacity:.9;
+      transform:translateY(-2px);
+    }
+
+    .download-section{
+      margin-top:20px;
+    }
+
+    .download-card{
+      text-align:center;
+      padding:60px 30px;
+      background:rgba(255,255,255,0.03);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:28px;
+    }
+
+    .download-card h2{
+      font-size:36px;
+      margin-bottom:16px;
+    }
+
+    .download-card p{
+      max-width:650px;
+      margin:0 auto 30px;
+    }
+
+    .download-button{
+      max-width:320px;
+      margin:auto;
+    }
+
+    .mini-text{
+      font-size:13px;
+      color:#777;
+      margin-top:14px;
+      text-align:center;
+    }
+
+    @media(max-width:900px){
+
+      .top-grid{
+        grid-template-columns:1fr;
+      }
+
+      h1{
+        font-size:26px;
+      }
+
+      .download-card h2{
+        font-size:28px;
+      }
+
+      .card{
+        padding:24px;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- LOGO -->
+    <div class="logo">
+      <img src="https://i.postimg.cc/fyF5fYJ4/Chat-GPT-Image-5-de-mai-de-2026-20-35-42.png" alt="Logo">
+    </div>
+
+    <!-- TOP -->
+    <div class="top-grid">
+
+      <!-- SERVICES -->
+      <div class="card">
+
+        <h1>Ghost Production & Mix / Master</h1>
+
+        <p>
+          Professional ghost production, co-production, mix and master focused on electronic music.
+          Send your idea, reference track or project details and let's create something unique.
+        </p>
+
+        <!-- FORM -->
+        <form action="https://formsubmit.co/stgstudiomix@gmail.com" method="POST">
+
+          <input 
+            type="email" 
+            name="email" 
+            placeholder="Your email"
+            required
+          >
+
+          <textarea 
+            name="message" 
+            placeholder="Tell me what you need..."
+            required
+          ></textarea>
+
+          <!-- CONFIG -->
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_subject" value="New Client Request">
+
+          <button type="submit">
+            Send Request
+          </button>
+
+        </form>
+
+      </div>
+
+      <!-- DONATE -->
+      <div class="card">
+
+        <h1>Support Me</h1>
+
+        <p>
+          If you enjoy the remakes, edits and content from the channel, you can support the project with a donation.
+          Every support helps me continue creating new music and exclusive content.
+        </p>
+
+        <a 
+          href="https://www.paypal.com/donate/?hosted_button_id=DMW8NU58ZPWAY"
+          target="_blank"
+          class="button"
+        >
+          Donate Now
+        </a>
+
+        <div class="mini-text">
+          You can send any amount.
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- DOWNLOAD -->
+    <section class="download-section">
+
+      <div class="download-card">
+
+        <h2>Download The FLP FREE Remake</h2>
+
+        <p>
+          Ready to get the remake you heard on YouTube?
+          Click the button below and access the exclusive download page.
+        </p>
+
+        <a 
+          href="https://drive.google.com/file/d/1F1pC3-3u532nCd5EnmLfoYXyWVi3s-ng/view?usp=sharing"
+          target="_blank"
+          class="button download-button"
+        >
+          Access Download
+        </a>
+
+      </div>
+
+    </section>
+
+  </div>
+
+</body>
+</html>
